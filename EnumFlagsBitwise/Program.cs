@@ -21,6 +21,10 @@ namespace EnumFlagsBitwise
             // use XOR operator (^) to remove Tuesday, doesn't matter if Tuesday is not in set
             days ^= Weekdays.Tuesday;
 
+            // use NOT operator (~), acts like XOR above
+            days &= ~Weekdays.Tuesday;
+            days |= Weekdays.Tuesday;
+            
             isTuesdayInSet = days.HasFlag(Weekdays.Tuesday); // same as above, introduced in 4.0
             Console.WriteLine("isTuesdayInSet: {0}", isTuesdayInSet);
 
